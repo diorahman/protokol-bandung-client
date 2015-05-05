@@ -5,6 +5,14 @@ var randomstring = require('randomstring');
 var validate = require('./validate');
 var methods = ['topup', 'status', 'balance', 'product', 'echo'];
 
+xmlrpc.dateFormatter.setOpts({
+  colons: true,
+  hypens: true,
+  local: true,
+  ms: true,
+  offset: true
+});
+
 module.exports = protokolBandung;
 
 function protokolBandung(options){
