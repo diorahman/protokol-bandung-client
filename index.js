@@ -3,7 +3,7 @@ var xmlrpc = require('xmlrpc');
 var crypto = require('crypto');
 var randomstring = require('randomstring');
 var validate = require('./validate');
-var actions = ['topup', 'status', 'balance', 'product', 'echo'];
+var methods = ['topup', 'status', 'balance', 'product', 'echo'];
 
 module.exports = protokolBandung;
 
@@ -25,6 +25,7 @@ function protokolBandung(options){
       });
     }
   });
+  this.methods = methods;
   return this;
 }
 
