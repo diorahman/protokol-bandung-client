@@ -5,7 +5,7 @@ function print(err, val) {
 }
 
 var protokolBandung = require('./')({
-  host: '60.253.117.181',
+  host: '192.168.1.1',
   port: '7022',
   path: '/'
 });
