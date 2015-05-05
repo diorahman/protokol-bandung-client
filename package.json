@@ -1,6 +1,6 @@
 {
   "name": "prtklbdg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "protokol bandung client",
   "main": "index.js",
   "scripts": {
