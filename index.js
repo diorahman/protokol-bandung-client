@@ -10,18 +10,18 @@ module.exports = protokolBandung;
 function protokolBandung(options){
   var self = this;
   self.xmlrpc = xmlrpc.createClient(options);
-  actions.forEach(function(action) {
-    self[action] = function(params, cb) {
+  methods.forEach(function(method) {
+    self[method] = function(params, cb) {
       params.reqid = params.reqid || randomstring.generate(20);
       if (params.reqid && params.pin) {
         params.signature = createSignature(params.reqid, params.pin);
         delete params.pin;
       }
-      validate(params, action, function(err, value) {
+      validate(params, method, function(err, value) {
         if (err)
           return cb(err);
         debug("%s", params.reqid);
-        self.xmlrpc.methodCall.apply(self.xmlrpc, [action, [value], cb]);
+        self.xmlrpc.methodCall.apply(self.xmlrpc, [method, [value], cb]);
       });
     }
   });
