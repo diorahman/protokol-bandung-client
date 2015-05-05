@@ -18,8 +18,10 @@ function protokolBandung(options){
         delete params.pin;
       }
       validate(params, method, function(err, value) {
-        if (err)
+        if (err) {
+          err.params = params;
           return cb(err);
+        }
         debug("%s", params.reqid);
         self.xmlrpc.methodCall.apply(self.xmlrpc, [method, [value], cb]);
       });
