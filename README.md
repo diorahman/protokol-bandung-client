@@ -10,6 +10,15 @@ protokolBandung.echo('hihi', function(err, val){
 
 See more on `test.js`.
 
-## License
+### Test
+
+As mentioned before, we need a valid `config.json` file.
+
+```
+$ npm install
+$ npm test
+```
+
+### License
 
 MIT
